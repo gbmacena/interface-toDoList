@@ -8,7 +8,7 @@ export default function Create({ onAdd }) {
   const handleAdd = () => {
     if (task.trim() === "") return;
     axios
-      .post("https://node-mongodb-api-pearl.vercel.app/add", { task: task })
+      .post("https://api-to-do-list-livid.vercel.app/add", { task: task })
       .then((response) => {
         onAdd(response.data);
         setTask("");
