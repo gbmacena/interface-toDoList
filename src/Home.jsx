@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://node-mongodb-api-pearl.vercel.app/get")
+      .get("https://api-to-do-list-nine.vercel.app/get")
       .then((result) => setTodos(result.data))
       .catch((err) => console.log(err));
   }, []);
@@ -19,7 +19,7 @@ export default function Home() {
 
   const handleEdit = (id) => {
     axios
-      .put(`https://node-mongodb-api-pearl.vercel.app/update/${id}`)
+      .put(`https://api-to-do-list-nine.vercel.app/update/${id}`)
       .then(() => {
         setTodos(
           todos.map((todo) =>
@@ -32,7 +32,7 @@ export default function Home() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://node-mongodb-api-pearl.vercel.app/delete/${id}`)
+      .delete(`https://api-to-do-list-nine.vercel.app/delete/${id}`)
       .then(() => {
         setTodos(todos.filter((todo) => todo._id !== id));
       })
